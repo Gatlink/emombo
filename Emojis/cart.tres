@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EmojiData" format=3 uid="uid://dmeu33w2hi0om"]
+
+[ext_resource type="Script" uid="uid://dhom4gd76weum" path="res://emoji_data.gd" id="1_ket8g"]
+
+[resource]
+script = ExtResource("1_ket8g")
+emoji = "🛒"
+metadata/_custom_type_script = "uid://dhom4gd76weum"
