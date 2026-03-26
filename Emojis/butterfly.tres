@@ -1,12 +1,10 @@
 [gd_resource type="Resource" script_class="EmojiData" format=3 uid="uid://c3hwquds756k8"]
 
 [ext_resource type="Script" uid="uid://dhom4gd76weum" path="res://emoji_data.gd" id="1_ithbo"]
-[ext_resource type="Resource" uid="uid://bibchyw7t7jl0" path="res://Emojis/caterpillar.tres" id="2_hq6iy"]
-[ext_resource type="Resource" uid="uid://boafb1psss35w" path="res://Emojis/hourglass.tres" id="3_qjb5f"]
 
 [resource]
 script = ExtResource("1_ithbo")
 emoji = "🦋"
 hint = "Mue"
-combo = Array[ExtResource("1_ithbo")]([ExtResource("2_hq6iy"), ExtResource("3_qjb5f")])
+combo = "🐛⌛"
 metadata/_custom_type_script = "uid://dhom4gd76weum"

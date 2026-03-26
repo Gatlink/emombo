@@ -34,8 +34,8 @@ func _on_validate_button_pressed() -> void:
 		update_health()
 
 
-func on_grid_emoji_selected(emoji: EmojiData) -> void:
-	if Game.selected.has(emoji):
+func on_grid_emoji_selected(emoji: String) -> void:
+	if Game.selected.find(emoji) >= 0:
 		Game.unselect(emoji)
 	else:
 		Game.select(emoji)
@@ -58,14 +58,14 @@ func update_to_find() -> void:
 func update_grid() -> void:
 	for i in Game.POOL_SIZE:
 		var slot := grid.get_child(i) as EmojiSlot
-		slot.data = Game.pool[i]
+		slot.text = Game.pool[i]
 
 
 func update_combo() -> void:
 	for i in Game.MAX_SELECTED_COUNT:
 		var slot := combo.get_child(i) as EmojiSlot
 		if i < Game.selected.size():
-			slot.data = Game.selected[i]
+			slot.text = Game.selected[i]
 			slot.show()
 		else:
 			slot.hide()

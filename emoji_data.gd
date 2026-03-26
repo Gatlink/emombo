@@ -4,4 +4,4 @@ extends Resource
 
 @export var emoji: String
 @export var hint: String
-@export var combo: Array[EmojiData]
+@export var combo: String

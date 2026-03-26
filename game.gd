@@ -6,17 +6,18 @@ const POOL_SIZE := 16
 const MAX_SELECTED_COUNT := 5
 const MAX_HEALTH := 4
 
-
 # All emojis which can appear in the pool
-var emojis: Array[EmojiData] = []
+var emojis := "☠️👽🤖🐕🐈🐅🐎🦏🐄🐖🐑🐪🦘🦥🦨🐘🐀🐇🐿️🦫🦎🐊🐢🐍🐉🦦🦈🐬🦭🐋🐟🦀🦆🐓🦩🦉🐧🦇🐌🐛🦟🪱🦗🐜🪳🐝🐞🧟🦴🦷🧠🫀🫅👮🕵️🥷🧑‍⚕️🧑‍🍳🧑‍🚀🧙🧛👂💪👃🎈🧨🎄🎞️🎠🎪🎨🧵🛒👓🦺🧦👑🎩⚽🏀🏈🎳🎯🥋🏆🕹️🎲🪩♟️🎤🎷🎸🗝️🧬💊🔬🧪🩸🛡️💡📖🖌️⌛🍟🍿🧀🥫🥩🫖🍯🍫🧊🍅🍄🥕🌼🌳🚗🛹🛼🚲✈️🚀🛸⛽🌍🏔️🏖️🏠⛩️🗽🌧️🌕☀️💧🔥☂️"
 # Emojis that will be proposed to the player to combine
-var pool: Array[EmojiData] = []
+var pool: Array[String] = []
 # Emojis the player must find to win (first one is the one currently being guessed)
 var queue: Array[EmojiData] = []
 # Emojis selected by the player
-var selected: Array[EmojiData] = []
+var selected: Array[String] = []
 # Attempts left in the current game
 var health: int
+# Indices used to create the pool
+var indexes: Array[int] = []
 
 
 func _ready() -> void:
@@ -25,50 +26,61 @@ func _ready() -> void:
 		if data == null:
 			continue
 		
-		if data.combo.size() == 0:
-			emojis.append(data)
-		else:
-			queue.append(data)
+		queue.append(data)
 	
-	queue.sort_custom(func (a: EmojiData, b: EmojiData): return a.combo.size() < b.combo.size())
+	queue.sort_custom(func (a: EmojiData, b: EmojiData): return a.combo.length() < b.combo.length())
+	pool.resize(POOL_SIZE)
 	start_game()
 
 
 func start_game() -> void:
 	generate_pool()
-	selected.resize(queue.front().combo.size())
-	selected.fill(null)
+	selected.resize(queue.front().combo.length())
+	selected.fill("")
 	health = MAX_HEALTH
 
 
 func end_game() -> void:
-	emojis.append(queue.pop_front())
+	emojis += queue.pop_front().emoji
+
+
+func generate_indexes() -> void:
+	for i in emojis.length():
+		indexes.append(i)
+	indexes.shuffle()
 
 
 func generate_pool() -> void:
-	emojis.shuffle()
-	pool = emojis.slice(0, POOL_SIZE)
-	for emoji in queue.front().combo:
-		if not pool.has(emoji):
-			pool[randi() % POOL_SIZE] = emoji
+	pool.clear()
+	for i in POOL_SIZE:
+		if indexes.size() == 0:
+			generate_indexes()
+		
+		var index: int = indexes.pop_front()
+		pool.append(emojis[index])
+	
+	var to_find: EmojiData = queue.front()
+	for i in to_find.combo.length():
+		if not pool.has(to_find.combo[i]):
+			pool[randi() % POOL_SIZE] = to_find.combo[i]
 
 
-func select(emoji: EmojiData) -> void:
+func select(emoji: String) -> void:
 	for i in selected.size():
-		if selected[i] == null:
+		if selected[i].is_empty():
 			selected[i] = emoji
 			return
 
 
-func unselect(emoji: EmojiData) -> void:
+func unselect(emoji: String) -> void:
 	for i in selected.size():
 		if selected[i] == emoji:
-			selected[i] = null
+			selected[i] = ""
 			return
 
 
 func is_selection_valid() -> bool:
 	for emoji in selected:
-		if emoji == null or not queue.front().combo.has(emoji):
+		if emoji == "" or not queue.front().combo.find(emoji) >= 0:
 			return false
 	return true
