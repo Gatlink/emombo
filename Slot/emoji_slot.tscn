@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b3gq0sxauhq2t"]
+
+[ext_resource type="StyleBox" uid="uid://jsxap3k20r30" path="res://Slot/style_slot_normal.tres" id="1_de5cb"]
+[ext_resource type="Script" uid="uid://b6a0kwxa21gc" path="res://Slot/emoji_slot.gd" id="1_eb8nr"]
+[ext_resource type="StyleBox" uid="uid://cs13oe4xiiylk" path="res://Slot/style_slot_hover.tres" id="2_di8yo"]
+[ext_resource type="StyleBox" uid="uid://trfyqn5i1lvp" path="res://Slot/style_slot_disabled.tres" id="3_w2fie"]
+
+[node name="EmojiSlot" type="Button" unique_id=1706341699]
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = -1
+anchor_right = 0.055555556
+anchor_bottom = 0.09876543
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = ExtResource("1_de5cb")
+theme_override_styles/pressed = ExtResource("1_de5cb")
+theme_override_styles/hover = ExtResource("2_di8yo")
+theme_override_styles/disabled = ExtResource("3_w2fie")
+theme_override_styles/focus = ExtResource("2_di8yo")
+script = ExtResource("1_eb8nr")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
