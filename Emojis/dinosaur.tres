@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EmojiData" format=3 uid="uid://b134mfdg4v56n"]
+
+[ext_resource type="Script" uid="uid://dhom4gd76weum" path="res://emoji_data.gd" id="1_m3py3"]
+
+[resource]
+script = ExtResource("1_m3py3")
+emoji = "🦖"
+hint = "Ambre"
+combo = "🦟,🧬,🏝️,🐸"
+metadata/_custom_type_script = "uid://dhom4gd76weum"

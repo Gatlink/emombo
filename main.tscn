@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://dd4080mglurt3"]
 
-[ext_resource type="PackedScene" uid="uid://b3gq0sxauhq2t" path="res://Slot/emoji_slot.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://6oefbiwyd4f5" path="res://main.gd" id="1_h2yge"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
-bg_color = Color(0.1136, 0.044799995, 0.32, 1)
+bg_color = Color(0.11372549, 0.043137256, 0.32156864, 1)
 expand_margin_left = 16.0
 expand_margin_right = 16.0
 
@@ -14,7 +13,44 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 14
 
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font_size = 42
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.67, 0.24120001, 0.24120001, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0, 0, 0, 0.5019608)
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0.11372549, 0.043137256, 0.32156864, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.26666668, 0.42352942, 0.7019608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font_size = 56
+
+[sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
+font_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
 content_margin_left = 10.0
 content_margin_right = 10.0
 bg_color = Color(0.67, 0.24120001, 0.24120001, 1)
@@ -66,11 +102,14 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ToFind" parent="PanelContainer/VBoxContainer" unique_id=188719904 instance=ExtResource("1_0xm2m")]
+[node name="ToFind" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1276085102]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
+mouse_default_cursor_shape = 2
+label_settings = SubResource("LabelSettings_h2yge")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="HintLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=833770053]
 layout_mode = 2
@@ -87,54 +126,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 columns = 4
 
-[node name="EmojiSlot" parent="PanelContainer/VBoxContainer/Grid" unique_id=1541857083 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot2" parent="PanelContainer/VBoxContainer/Grid" unique_id=659390603 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot3" parent="PanelContainer/VBoxContainer/Grid" unique_id=1901131600 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot4" parent="PanelContainer/VBoxContainer/Grid" unique_id=1571824547 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot5" parent="PanelContainer/VBoxContainer/Grid" unique_id=1431689182 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot6" parent="PanelContainer/VBoxContainer/Grid" unique_id=921876700 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot7" parent="PanelContainer/VBoxContainer/Grid" unique_id=364143181 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot8" parent="PanelContainer/VBoxContainer/Grid" unique_id=880994465 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot9" parent="PanelContainer/VBoxContainer/Grid" unique_id=1374831652 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot10" parent="PanelContainer/VBoxContainer/Grid" unique_id=1004056920 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot11" parent="PanelContainer/VBoxContainer/Grid" unique_id=1920027223 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot12" parent="PanelContainer/VBoxContainer/Grid" unique_id=647524124 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot13" parent="PanelContainer/VBoxContainer/Grid" unique_id=1478442727 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot14" parent="PanelContainer/VBoxContainer/Grid" unique_id=600911715 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot15" parent="PanelContainer/VBoxContainer/Grid" unique_id=809666019 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot16" parent="PanelContainer/VBoxContainer/Grid" unique_id=1963657285 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
 [node name="Spacer4" type="Control" parent="PanelContainer/VBoxContainer" unique_id=1113762548]
 layout_mode = 2
 size_flags_vertical = 3
@@ -142,21 +133,6 @@ size_flags_vertical = 3
 [node name="Combo" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=142146050]
 layout_mode = 2
 alignment = 1
-
-[node name="EmojiSlot" parent="PanelContainer/VBoxContainer/Combo" unique_id=819608166 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot2" parent="PanelContainer/VBoxContainer/Combo" unique_id=493707965 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot3" parent="PanelContainer/VBoxContainer/Combo" unique_id=923801174 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot4" parent="PanelContainer/VBoxContainer/Combo" unique_id=884205538 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
-
-[node name="EmojiSlot5" parent="PanelContainer/VBoxContainer/Combo" unique_id=1627295728 instance=ExtResource("1_0xm2m")]
-layout_mode = 2
 
 [node name="Spacer5" type="Control" parent="PanelContainer/VBoxContainer" unique_id=1980736250]
 layout_mode = 2
@@ -208,8 +184,109 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="Shade" type="PanelContainer" parent="PanelContainer" unique_id=1609075932]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0xm2m")
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/Shade" unique_id=201398668]
+layout_mode = 2
+
+[node name="WinPanel" type="PanelContainer" parent="PanelContainer/Shade/CenterContainer" unique_id=1024974729]
+custom_minimum_size = Vector2(160, 192)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Shade/CenterContainer/WinPanel" unique_id=2095973737]
+layout_mode = 2
+
+[node name="Emoji" type="Label" parent="PanelContainer/Shade/CenterContainer/WinPanel/VBoxContainer" unique_id=295404800]
+layout_mode = 2
+text = "🦦"
+label_settings = SubResource("LabelSettings_1bvp3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/Shade/CenterContainer/WinPanel/VBoxContainer" unique_id=1174363546]
+layout_mode = 2
+text = "Combo réussi !"
+label_settings = SubResource("LabelSettings_lquwl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="PanelContainer/Shade/CenterContainer/WinPanel/VBoxContainer" unique_id=426786100]
+layout_mode = 2
+text = "Score : "
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="PanelContainer/Shade/CenterContainer/WinPanel/VBoxContainer" unique_id=959547296]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WinButton" type="Button" parent="PanelContainer/Shade/CenterContainer/WinPanel/VBoxContainer" unique_id=1513471732]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_272bh")
+text = "Continuer ▶"
+
+[node name="Spacer3" type="Control" parent="PanelContainer/Shade/CenterContainer/WinPanel/VBoxContainer" unique_id=1634710941]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SuccessPanel" type="PanelContainer" parent="PanelContainer/Shade/CenterContainer" unique_id=1226695795]
+visible = false
+custom_minimum_size = Vector2(160, 208)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Shade/CenterContainer/SuccessPanel" unique_id=1360409478]
+layout_mode = 2
+
+[node name="Emoji" type="Label" parent="PanelContainer/Shade/CenterContainer/SuccessPanel/VBoxContainer" unique_id=1408423213]
+layout_mode = 2
+text = "🏆"
+label_settings = SubResource("LabelSettings_1bvp3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/Shade/CenterContainer/SuccessPanel/VBoxContainer" unique_id=863539310]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Tu as réussi tous les combos !"
+label_settings = SubResource("LabelSettings_lquwl")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ScoreLabel" type="Label" parent="PanelContainer/Shade/CenterContainer/SuccessPanel/VBoxContainer" unique_id=290616009]
+layout_mode = 2
+text = "Score total : "
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="PanelContainer/Shade/CenterContainer/SuccessPanel/VBoxContainer" unique_id=147982958]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SuccessButton" type="Button" parent="PanelContainer/Shade/CenterContainer/SuccessPanel/VBoxContainer" unique_id=373154030]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_272bh")
+text = "Réessayer"
+
+[node name="Spacer3" type="Control" parent="PanelContainer/Shade/CenterContainer/SuccessPanel/VBoxContainer" unique_id=1662936699]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="Spacer2" type="Control" parent="." unique_id=975031312]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ValidateButton" to="." method="_on_validate_button_pressed"]
+[connection signal="pressed" from="PanelContainer/Shade/CenterContainer/WinPanel/VBoxContainer/WinButton" to="." method="_on_win_button_pressed"]
+[connection signal="pressed" from="PanelContainer/Shade/CenterContainer/SuccessPanel/VBoxContainer/SuccessButton" to="." method="_on_success_button_pressed"]

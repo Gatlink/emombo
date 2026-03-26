@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EmojiData" format=3 uid="uid://dv8v32bu6pcmv"]
+
+[ext_resource type="Script" uid="uid://dhom4gd76weum" path="res://emoji_data.gd" id="1_leqe1"]
+
+[resource]
+script = ExtResource("1_leqe1")
+emoji = "🥷🏻"
+hint = "Cowabunga"
+combo = "🍕,🧪,🐢,🗽"
+metadata/_custom_type_script = "uid://dhom4gd76weum"

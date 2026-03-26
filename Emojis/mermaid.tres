@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EmojiData" format=3 uid="uid://c68mdolae0rxq"]
+
+[ext_resource type="Script" uid="uid://dhom4gd76weum" path="res://emoji_data.gd" id="1_lnv3s"]
+
+[resource]
+script = ExtResource("1_lnv3s")
+emoji = "🧜‍♀️"
+hint = "Chimère"
+combo = "👩,🐟,🌊,🪸"
+metadata/_custom_type_script = "uid://dhom4gd76weum"
