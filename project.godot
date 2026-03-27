@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Game="*uid://6oil5rejs3km"
+Game="*uid://b55h37tigykf5"
 
 [physics]
 
@@ -26,4 +26,6 @@ Game="*uid://6oil5rejs3km"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-environment/defaults/default_clear_color=Color(0.096204735, 0.09620475, 0.09620472, 1)
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.10980392, 0.12156863, 0.18039216, 1)

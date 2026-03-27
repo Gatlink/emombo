@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dd4080mglurt3"]
 
 [ext_resource type="Script" uid="uid://6oefbiwyd4f5" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="FontFile" uid="uid://bsko028kkcs2j" path="res://NotoColorEmoji-Regular.ttf" id="2_0xm2m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
-bg_color = Color(0.11372549, 0.043137256, 0.32156864, 1)
+bg_color = Color(0.10776003, 0.031199997, 0.24, 1)
 expand_margin_left = 16.0
 expand_margin_right = 16.0
 
@@ -14,6 +15,7 @@ font_size = 32
 font_size = 14
 
 [sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font = ExtResource("2_0xm2m")
 font_size = 42
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
@@ -24,6 +26,36 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.87, 0.31320003, 0.31320003, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.87, 0.31320003, 0.31320003, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.25, 0.1325, 0.1325, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vw27"]
+font = ExtResource("2_0xm2m")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
 bg_color = Color(0, 0, 0, 0.5019608)
@@ -43,6 +75,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font = ExtResource("2_0xm2m")
 font_size = 56
 
 [sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
@@ -58,6 +91,16 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_272bh"]
+font_size = 24
+
+[sub_resource type="Gradient" id="Gradient_ig7tw"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5, 0.6666667, 0.8333333)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.9666667, 0, 1, 0.083333254, 1, 0, 1, 0, 1, 0.88333344, 1, 0, 0, 1, 1, 0.8000002, 0, 1, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 6
 
 [node name="Main" type="HBoxContainer" unique_id=1048609818]
 anchors_preset = 15
@@ -142,6 +185,9 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lquwl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7mycd")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
 text = "VALIDER"
 
 [node name="Spacer6" type="Control" parent="PanelContainer/VBoxContainer" unique_id=1719357629]
@@ -155,28 +201,36 @@ alignment = 1
 [node name="Heart" type="Label" parent="PanelContainer/VBoxContainer/LifeBar" unique_id=1445690737]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+theme_override_font_sizes/font_size = 19
 text = "❤️"
+label_settings = SubResource("LabelSettings_5vw27")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Heart2" type="Label" parent="PanelContainer/VBoxContainer/LifeBar" unique_id=1774587235]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+theme_override_font_sizes/font_size = 19
 text = "❤️"
+label_settings = SubResource("LabelSettings_5vw27")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Heart3" type="Label" parent="PanelContainer/VBoxContainer/LifeBar" unique_id=816776826]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+theme_override_font_sizes/font_size = 19
 text = "❤️"
+label_settings = SubResource("LabelSettings_5vw27")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Heart4" type="Label" parent="PanelContainer/VBoxContainer/LifeBar" unique_id=1424583975]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+theme_override_font_sizes/font_size = 19
 text = "❤️"
+label_settings = SubResource("LabelSettings_5vw27")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -193,12 +247,17 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_0xm2m")
 layout_mode = 2
 
 [node name="WinPanel" type="PanelContainer" parent="PanelContainer/Shade/CenterContainer" unique_id=1024974729]
+visible = false
 custom_minimum_size = Vector2(160, 192)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Shade/CenterContainer/WinPanel" unique_id=2095973737]
 layout_mode = 2
+
+[node name="Spacer" type="Control" parent="PanelContainer/Shade/CenterContainer/WinPanel/VBoxContainer" unique_id=1916431928]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Emoji" type="Label" parent="PanelContainer/Shade/CenterContainer/WinPanel/VBoxContainer" unique_id=295404800]
 layout_mode = 2
@@ -230,7 +289,7 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_272bh")
-text = "Continuer ▶"
+text = "Continuer"
 
 [node name="Spacer3" type="Control" parent="PanelContainer/Shade/CenterContainer/WinPanel/VBoxContainer" unique_id=1634710941]
 layout_mode = 2
@@ -244,6 +303,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Shade/CenterContainer/SuccessPanel" unique_id=1360409478]
 layout_mode = 2
+
+[node name="Spacer" type="Control" parent="PanelContainer/Shade/CenterContainer/SuccessPanel/VBoxContainer" unique_id=1401510120]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Emoji" type="Label" parent="PanelContainer/Shade/CenterContainer/SuccessPanel/VBoxContainer" unique_id=1408423213]
 layout_mode = 2
@@ -283,10 +346,74 @@ text = "Réessayer"
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="FailurePanel" type="PanelContainer" parent="PanelContainer/Shade/CenterContainer" unique_id=1004044221]
+visible = false
+custom_minimum_size = Vector2(160, 208)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Shade/CenterContainer/FailurePanel" unique_id=315426762]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="PanelContainer/Shade/CenterContainer/FailurePanel/VBoxContainer" unique_id=399194814]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Emoji" type="Label" parent="PanelContainer/Shade/CenterContainer/FailurePanel/VBoxContainer" unique_id=1240913108]
+layout_mode = 2
+text = "💀"
+label_settings = SubResource("LabelSettings_1bvp3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/Shade/CenterContainer/FailurePanel/VBoxContainer" unique_id=79451570]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Perdu !"
+label_settings = SubResource("LabelSettings_272bh")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ScoreLabel" type="Label" parent="PanelContainer/Shade/CenterContainer/FailurePanel/VBoxContainer" unique_id=937241851]
+layout_mode = 2
+text = "Score final : "
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="PanelContainer/Shade/CenterContainer/FailurePanel/VBoxContainer" unique_id=1333704014]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FailureButton" type="Button" parent="PanelContainer/Shade/CenterContainer/FailurePanel/VBoxContainer" unique_id=649709761]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_272bh")
+text = "Réessayer"
+
+[node name="Spacer3" type="Control" parent="PanelContainer/Shade/CenterContainer/FailurePanel/VBoxContainer" unique_id=1483719375]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="Spacer2" type="Control" parent="." unique_id=975031312]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="WinParticle" type="CPUParticles2D" parent="." unique_id=543166404]
+position = Vector2(576, 0)
+emitting = false
+amount = 32
+lifetime = 1.5
+one_shot = true
+emission_shape = 3
+emission_rect_extents = Vector2(576, 1)
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_ig7tw")
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ValidateButton" to="." method="_on_validate_button_pressed"]
 [connection signal="pressed" from="PanelContainer/Shade/CenterContainer/WinPanel/VBoxContainer/WinButton" to="." method="_on_win_button_pressed"]
 [connection signal="pressed" from="PanelContainer/Shade/CenterContainer/SuccessPanel/VBoxContainer/SuccessButton" to="." method="_on_success_button_pressed"]
+[connection signal="pressed" from="PanelContainer/Shade/CenterContainer/FailurePanel/VBoxContainer/FailureButton" to="." method="_on_failure_button_pressed"]

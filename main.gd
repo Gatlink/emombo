@@ -2,6 +2,7 @@ extends HBoxContainer
 
 
 const EMOJI_SLOT := preload("uid://b3gq0sxauhq2t")
+const VALIDATION_TIME := 0.5
 
 
 @onready var to_find: Label = $PanelContainer/VBoxContainer/ToFind
@@ -9,6 +10,8 @@ const EMOJI_SLOT := preload("uid://b3gq0sxauhq2t")
 @onready var grid: GridContainer = $PanelContainer/VBoxContainer/Grid
 @onready var combo: HBoxContainer = $PanelContainer/VBoxContainer/Combo
 @onready var life_bar: HBoxContainer = $PanelContainer/VBoxContainer/LifeBar
+@onready var validate_button: Button = $PanelContainer/VBoxContainer/ValidateButton
+@onready var win_particle: CPUParticles2D = $WinParticle
 
 @onready var shade: PanelContainer = $PanelContainer/Shade
 
@@ -19,6 +22,12 @@ const EMOJI_SLOT := preload("uid://b3gq0sxauhq2t")
 @onready var success_panel: PanelContainer = $PanelContainer/Shade/CenterContainer/SuccessPanel
 @onready var success_score_label: Label = $PanelContainer/Shade/CenterContainer/SuccessPanel/VBoxContainer/ScoreLabel
 
+@onready var failure_panel: PanelContainer = $PanelContainer/Shade/CenterContainer/FailurePanel
+@onready var failure_score_label: Label = $PanelContainer/Shade/CenterContainer/FailurePanel/VBoxContainer/ScoreLabel
+
+
+var combo_slots: Array[EmojiSlot] = []
+
 
 func _ready() -> void:
 	for i in Game.POOL_SIZE:
@@ -27,20 +36,24 @@ func _ready() -> void:
 	for i in Game.MAX_SELECTED_COUNT:
 		add_slot(combo)
 	
+	for child in combo.get_children():
+		var slot := child as EmojiSlot
+		if slot != null:
+			combo_slots.append(slot)
+	
 	on_new_game()
 
 
 func _on_validate_button_pressed() -> void:
-	if Game.is_selection_valid():
-		Game.end_game()
-		
-		if Game.queue.is_empty():
-			show_success_panel()
+	var tween := create_tween()
+	for i in Game.combo.size():
+		if Game.combo.has(Game.selected[i]):
+			tween.tween_callback(combo_slots[i].right)
 		else:
-			show_win_panel()
-	else:
-		Game.health -= 1
-		update_health()
+			tween.tween_callback(combo_slots[i].wrong)
+		tween.tween_interval(VALIDATION_TIME)
+	
+	tween.tween_callback(check_combo)
 
 
 func _on_win_button_pressed() -> void:
@@ -53,6 +66,13 @@ func _on_win_button_pressed() -> void:
 func _on_success_button_pressed() -> void:
 	shade.hide()
 	success_panel.hide()
+	Game.restart()
+	on_new_game()
+
+
+func _on_failure_button_pressed() -> void:
+	shade.hide()
+	failure_panel.hide()
 	Game.restart()
 	on_new_game()
 
@@ -73,6 +93,9 @@ func on_new_game() -> void:
 	update_grid()
 	update_combo()
 	update_health()
+	
+	for slot in combo_slots:
+		slot.reset()
 
 
 func update_to_find() -> void:
@@ -96,6 +119,8 @@ func update_combo() -> void:
 			slot.disabled = Game.selected[i].is_empty()
 		else:
 			slot.hide()
+	
+	validate_button.disabled = Game.selected.count("") > 0
 
 
 func update_health() -> void:
@@ -104,9 +129,29 @@ func update_health() -> void:
 		heart.text = "❤️" if i < Game.health else "🖤"
 
 
+func check_combo() -> void:
+	if Game.is_selection_valid():
+		win_particle.emitting = true
+		Game.end_game()
+		
+		if Game.queue.is_empty():
+			show_success_panel()
+		else:
+			show_win_panel()
+	else:
+		Game.health -= 1
+		update_health()
+		
+		if Game.health <= 0:
+			show_failure_panel()
+		else:
+			for slot in combo_slots:
+				slot.reset()
+
+
 func show_win_panel() -> void:
 	win_emoji.text = to_find.text
-	win_score_label.text = "Score : %d points" % Game.score
+	win_score_label.text = "Score : %d point%s" % [Game.score, "s" if Game.score > 1 else ""]
 	win_panel.show()
 	shade.show()
 
@@ -114,4 +159,10 @@ func show_win_panel() -> void:
 func show_success_panel() -> void:
 	success_score_label.text = "Score total : %d/%d" % [Game.score, Game.score_total]
 	success_panel.show()
+	shade.show()
+
+
+func show_failure_panel() -> void:
+	failure_score_label.text = "Score final : %d point%s" % [Game.score, "s" if Game.score > 1 else ""]
+	failure_panel.show()
 	shade.show()

@@ -1,7 +1,6 @@
 extends Node
 
 
-const EMOJI_PATH := "res://Emojis/"
 const POOL_SIZE := 16
 const MAX_SELECTED_COUNT := 4
 const MAX_HEALTH := 4
@@ -12,6 +11,9 @@ const EMOJIS := "☠️,🤖,🐕,🐈,🐅,🐎,🦏,🐄,🐖,🐑,🐪,🦘,�
 	+ "♟️,🎤,🎷,🎸,🗝️,🧬,💊,🔬,🧪,🩸,🛡️,💡,🖌️,⌛,🍿,🧀,🥩,🫖,🍫,🧊," \
 	+ "🍅,🍄,🥕,🌳,🚗,🛹,🛼,🚲,✈️,🚀,🛸,🛳️,⛽,🌍,🏔️,🏖️,🏠,⛩️,🗽,🌧️," \
 	+ "🐿️,🪱,🌕,☀️,💧,🔥,☂️"
+
+
+@export var to_find: Array[EmojiData]
 
 
 var all_emojis: Array[String] = []
@@ -56,12 +58,8 @@ func end_game() -> void:
 
 
 func generate_queue() -> void:
-	for file_name in DirAccess.get_files_at(EMOJI_PATH):
-		var data := load(EMOJI_PATH + file_name) as EmojiData
-		if data == null:
-			continue
-		queue.append(data)
-	
+	queue.clear()
+	queue.append_array(to_find)
 	queue.shuffle()
 	queue.sort_custom(func (a: EmojiData, b: EmojiData): return a.combo.count(",") < b.combo.count(","))
 	score_total = queue.size()
