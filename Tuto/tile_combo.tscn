@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ccmwsf7bblomr"]
+
+[ext_resource type="PackedScene" uid="uid://re88klqry5km" path="res://Tuto/tile.tscn" id="1_hp2cu"]
+
+[node name="TileCombo" unique_id=1880010693 instance=ExtResource("1_hp2cu")]
+theme_override_font_sizes/font_size = 48
+disabled = true

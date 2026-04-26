@@ -18,6 +18,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 Game="*uid://b55h37tigykf5"
+GameTuto="*uid://bevt6mw8cjppa"
+
+[display]
+
+window/defaults/default_clear_color=Color(0.10980392, 0.12156863, 0.18039216, 1)
 
 [physics]
 
@@ -28,4 +33,4 @@ Game="*uid://b55h37tigykf5"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.10980392, 0.12156863, 0.18039216, 1)
+environment/defaults/default_clear_color=Color(0.16078432, 0.15686275, 0.19215687, 1)

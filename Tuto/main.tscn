@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://crv2ohib0ob1x"]
+
+[ext_resource type="Texture2D" uid="uid://b35x7e5krhj0s" path="res://emombo_logo.png" id="1_hkmsv"]
+[ext_resource type="FontFile" uid="uid://bsko028kkcs2j" path="res://NotoColorEmoji-Regular.ttf" id="2_ovitc"]
+[ext_resource type="PackedScene" uid="uid://re88klqry5km" path="res://Tuto/tile.tscn" id="3_ovitc"]
+[ext_resource type="Script" uid="uid://cpmj6ucwbh6lt" path="res://Tuto/grid.gd" id="3_wdyeu"]
+[ext_resource type="PackedScene" uid="uid://ccmwsf7bblomr" path="res://Tuto/tile_combo.tscn" id="4_wii7a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wii7a"]
+font = ExtResource("2_ovitc")
+font_size = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wii7a"]
+content_margin_left = 16.0
+content_margin_top = 2.0
+content_margin_right = 16.0
+content_margin_bottom = 2.0
+bg_color = Color(0.93333334, 0.5254902, 0.58431375, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_wdyeu"]
+font = ExtResource("2_ovitc")
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_ugoq4"]
+font_size = 18
+
+[node name="Main" type="CenterContainer" unique_id=278288710]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1836254415]
+layout_mode = 2
+
+[node name="Logo" type="TextureRect" parent="VBoxContainer" unique_id=1587563140]
+layout_mode = 2
+texture = ExtResource("1_hkmsv")
+stretch_mode = 5
+
+[node name="Instruction" type="Label" parent="VBoxContainer" unique_id=1514778828]
+layout_mode = 2
+text = "Combine les emojis pour créer celui-ci"
+
+[node name="Target" type="Label" parent="VBoxContainer" unique_id=841369395]
+layout_mode = 2
+text = "🦦"
+label_settings = SubResource("LabelSettings_wii7a")
+horizontal_alignment = 1
+
+[node name="Hint" type="Label" parent="VBoxContainer" unique_id=1389446398]
+layout_mode = 2
+text = "Indice: Mignon"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=1736699751]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer" unique_id=616365053]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer" unique_id=895084057]
+layout_mode = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 4
+script = ExtResource("3_wdyeu")
+
+[node name="Tile" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1847427073 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile2" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=964808569 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile3" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=551037612 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile4" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1206936135 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile5" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1644699198 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile6" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=2003257165 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile7" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=239669164 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile8" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1894199965 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile9" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1099092803 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile10" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=948878273 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile11" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=2041392622 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile12" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=54122918 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile13" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1984844054 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile14" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1515328055 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile15" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1524579267 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Tile16" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1287590104 instance=ExtResource("3_ovitc")]
+layout_mode = 2
+
+[node name="Spacer2" type="Control" parent="VBoxContainer" unique_id=225220405]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1891835140]
+layout_mode = 2
+alignment = 1
+
+[node name="TileCombo" parent="VBoxContainer/HBoxContainer" unique_id=1880010693 instance=ExtResource("4_wii7a")]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+
+[node name="TileCombo2" parent="VBoxContainer/HBoxContainer" unique_id=1136803302 instance=ExtResource("4_wii7a")]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+
+[node name="TileCombo3" parent="VBoxContainer/HBoxContainer" unique_id=179143617 instance=ExtResource("4_wii7a")]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+
+[node name="TileCombo4" parent="VBoxContainer/HBoxContainer" unique_id=1367192312 instance=ExtResource("4_wii7a")]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+
+[node name="Spacer3" type="Control" parent="VBoxContainer" unique_id=335572596]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1309741614]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_wii7a")
+text = "VALIDER"
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=321839946]
+layout_mode = 2
+text = "❤️❤️❤️❤️"
+label_settings = SubResource("LabelSettings_wdyeu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=996045865]
+layout_mode = 2
+text = "Raté ! Il te reste 3 essais"
+label_settings = SubResource("LabelSettings_ugoq4")
+horizontal_alignment = 1
+vertical_alignment = 1
