@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Game="*uid://b55h37tigykf5"
-GameTuto="*uid://bevt6mw8cjppa"
+GameTuto="*uid://5asxfeu8p6et"
 
 [display]
 
